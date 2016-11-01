@@ -36,6 +36,9 @@ module DeviseTokenAuth::Concerns::SetUserByToken
     # client_id isn't required, set to 'default' if absent
     @client_id ||= 'default'
 
+    puts @token
+    puts request.headers
+
     # check for an existing user, authenticated via warden/devise, if enabled
     if DeviseTokenAuth.enable_standard_devise_support
       devise_warden_user = warden.user(rc.to_s.underscore.to_sym)
