@@ -37,7 +37,7 @@ module DeviseTokenAuth::Concerns::SetUserByToken
     @client_id ||= 'default'
 
     puts @token
-    puts request.headers
+    puts [uid_name, access_token_name, client_name, uid, @client_id]
 
     # check for an existing user, authenticated via warden/devise, if enabled
     if DeviseTokenAuth.enable_standard_devise_support
